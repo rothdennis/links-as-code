@@ -2,7 +2,7 @@
 
 > Manage your personal or team link collection as a version-controlled YAML file and serve it as a clean, searchable web page.
 
-[![Docker Image](https://img.shields.io/docker/v/rothdennis/links-as-code/latest)](https://hub.docker.com/r/rothdennis/lac)
+[![Docker Image](https://img.shields.io/docker/v/rothdennis/links-as-code/latest)](https://hub.docker.com/r/rothdennis/links-as-code)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
