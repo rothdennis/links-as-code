@@ -22,6 +22,12 @@
 
 ---
 
+## Screenshots
+
+[![screenshot mobile](img/screenshot_mobile.jpg)]
+
+---
+
 ## Quick Start
 
 ### Docker Compose (recommended)
