@@ -45,8 +45,8 @@ jobs:
             rothdennis/links-as-code
             ghcr.io/${{ github.repository }}
           tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{version}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}.{{minor}}.{{patch}}
             type=raw,value=latest,enable=${{ github.event.release.prerelease == false }}
 
