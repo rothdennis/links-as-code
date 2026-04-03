@@ -22,9 +22,9 @@
 
 ---
 
-## Screenshots
+## Screenshot
 
-[![screenshot mobile](img/screenshot_mobile.jpg)]
+<img src="img/screenshot_mobile.jpg" alt="screenshot mobile" style="width:300px;"/>
 
 ---
 
