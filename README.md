@@ -23,6 +23,9 @@ services:
       - "9010:9010"
     volumes:
       - ./data:/app/data
+    environment:
+      OPEN_IN_NEW_TAB: False # default is True
+      TITLE: My link collection
 ```
 
 ```yaml
@@ -74,5 +77,5 @@ pip install -r requirements.txt
 
 ```sh
 # Start the Flask application
-python src/app.py
+python src/main.py
 ```
