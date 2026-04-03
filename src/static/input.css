@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+header{
+    @apply flex flex-col md:flex-row items-center justify-between p-4 border-b border-gray-300 gap-4 mb-2;
+}
+
+h1{
+    @apply text-2xl font-bold;
+}
+
+input{
+    @apply border border-gray-300 rounded-md p-2 w-full md:w-80;
+}
+
+.group > span{
+    @apply font-bold px-4 block pt-6;
+}
+
+.links_group{
+    @apply px-4 py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4;
+}
+
+a{
+    @apply block p-4 border border-gray-300 rounded-md hover:bg-gray-100;
+}

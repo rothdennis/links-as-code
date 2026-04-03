@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon"
+        href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktYm9va21hcmtzIiB2aWV3Qm94PSIwIDAgMTYgMTYiPgogIDxwYXRoIGQ9Ik0yIDRhMiAyIDAgMCAxIDItMmg2YTIgMiAwIDAgMSAyIDJ2MTEuNWEuNS41IDAgMCAxLS43NzcuNDE2TDcgMTMuMTAxbC00LjIyMyAyLjgxNUEuNS41IDAgMCAxIDIgMTUuNXptMi0xYTEgMSAwIDAgMC0xIDF2MTAuNTY2bDMuNzIzLTIuNDgyYS41LjUgMCAwIDEgLjU1NCAwTDExIDE0LjU2NlY0YTEgMSAwIDAgMC0xLTF6Ii8+CiAgPHBhdGggZD0iTTQuMjY4IDFIMTJhMSAxIDAgMCAxIDEgMXYxMS43NjhsLjIyMy4xNDhBLjUuNSAwIDAgMCAxNCAxMy41VjJhMiAyIDAgMCAwLTItMkg2YTIgMiAwIDAgMC0xLjczMiAxIi8+Cjwvc3ZnPg==" />
+    <script src="{{ url_for('static', filename='lac.js') }}"></script>
+    <title>LaC</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Links as Code (LaC)</h1>
+        <input type="search" name="search" id="search" placeholder="Search..." oninput="searchLinks()">
+    </header>
+
+    <main>
+
+        <div class="group">
+            <div class="links_group">
+                {% for link in data['links'] %}
+                <a href="{{ link.url }}" title="{{ link.description }}">{{ link.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+
+        {% for group in data['groups'] %}
+        <div class="group">
+            <span>{{ group.name }}</span>
+            <div class="links_group">
+                {% for link in group.links %}
+                <a href="{{ link.url }}" title="{{ link.description }}">{{ link.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+
+
+    </main>
+
+</body>
+
+</html>
