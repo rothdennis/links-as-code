@@ -27,6 +27,23 @@ RUN apk add --no-cache nginx \
     && addgroup -S appgroup \
     && adduser  -S appuser -G appgroup
 
+RUN mkdir -p \
+      /tmp/nginx-client-body \
+      /tmp/nginx-proxy \
+      /tmp/nginx-fastcgi \
+      /tmp/nginx-uwsgi \
+      /tmp/nginx-scgi \
+      /app/data \
+    && chown -R appuser:appgroup \
+      /tmp/nginx-client-body \
+      /tmp/nginx-proxy \
+      /tmp/nginx-fastcgi \
+      /tmp/nginx-uwsgi \
+      /tmp/nginx-scgi \
+      /app/data \
+      /var/lib/nginx \
+      /var/log/nginx
+
 COPY --from=builder /install /usr/local
 
 WORKDIR /app
