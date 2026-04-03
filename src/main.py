@@ -3,7 +3,7 @@ import os
 import yaml
 
 DEBUG = os.getenv('DEBUG', 'True').lower() in ('true', '1', 't', 'yes', 'y')
-PORT = 5050
+PORT = 9000
 DATA_DIR = os.getenv('DATA_DIR', './data')
 
 app = Flask(__name__)
@@ -16,6 +16,9 @@ def index():
             with open(os.path.join(DATA_DIR, filename), 'r') as f:
                 links = yaml.safe_load(f)
             break
+    else:
+        return "No YAML files found in data directory.", 404
+        
     return render_template('index.html', data=links)
 
 

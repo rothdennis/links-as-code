@@ -10,8 +10,9 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY src/ .
 
+ENV DEBUG=0
 ENV DATA_DIR=/app/data
 
-EXPOSE 8000
+EXPOSE 9010
 
 CMD ["sh", "-c", "nginx && python main.py"]

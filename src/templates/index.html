@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="A simple and efficient way to manage your links using a YAML file.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="shortcut icon"
         href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktYm9va21hcmtzIiB2aWV3Qm94PSIwIDAgMTYgMTYiPgogIDxwYXRoIGQ9Ik0yIDRhMiAyIDAgMCAxIDItMmg2YTIgMiAwIDAgMSAyIDJ2MTEuNWEuNS41IDAgMCAxLS43NzcuNDE2TDcgMTMuMTAxbC00LjIyMyAyLjgxNUEuNS41IDAgMCAxIDIgMTUuNXptMi0xYTEgMSAwIDAgMC0xIDF2MTAuNTY2bDMuNzIzLTIuNDgyYS41LjUgMCAwIDEgLjU1NCAwTDExIDE0LjU2NlY0YTEgMSAwIDAgMC0xLTF6Ii8+CiAgPHBhdGggZD0iTTQuMjY4IDFIMTJhMSAxIDAgMCAxIDEgMXYxMS43NjhsLjIyMy4xNDhBLjUuNSAwIDAgMCAxNCAxMy41VjJhMiAyIDAgMCAwLTItMkg2YTIgMiAwIDAgMC0xLjczMiAxIi8+Cjwvc3ZnPg==" />
@@ -13,35 +14,46 @@
 
 <body>
 
-    <header>
-        <h1>Links as Code (LaC)</h1>
-        <input type="search" name="search" id="search" placeholder="Search..." oninput="searchLinks()">
-    </header>
+    <div class="screen-wrapper">
 
-    <main>
+        <header>
+            <h1>Links as Code (LaC)</h1>
+            <input type="search" name="search" id="search" placeholder="Search..." oninput="searchLinks()">
+        </header>
 
-        <div class="group">
-            <div class="links_group">
-                {% for link in data['links'] %}
-                <a href="{{ link.url }}" title="{{ link.description }}">{{ link.name }}</a>
-                {% endfor %}
+        <main>
+
+            <div class="group">
+                <div class="links_group">
+                    {% for link in data['links'] %}
+                    <a href="{{ link.url }}" title="{{ link.description }}">{{ link.name }}</a>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
 
-        {% for group in data['groups'] %}
-        <div class="group">
-            <span>{{ group.name }}</span>
-            <div class="links_group">
-                {% for link in group.links %}
-                <a href="{{ link.url }}" title="{{ link.description }}">{{ link.name }}</a>
-                {% endfor %}
+            {% for group in data['groups'] %}
+            <div class="group">
+                <span>{{ group.name }}</span>
+                <div class="links_group">
+                    {% for link in group.links %}
+                    <a href="{{ link.url }}" title="{{ link.description }}">{{ link.name }}</a>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-        {% endfor %}
+            {% endfor %}
+        </main>
 
+        <footer>
+            <div>
+                <span>Made with ❤️ in 🇪🇺</span>
+            </div>
+            <div>
+                <a href="https://github.com/rothdennis/links-as-code" target="_blank">GitHub</a>
+                <a href="https://github.com/rothdennis/links-as-code/issues" target="_blank">Issues</a>
+            </div>
+        </footer>
 
-
-    </main>
+    </div>
 
 </body>
 
