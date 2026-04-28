@@ -6,12 +6,10 @@ RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
 # final stage
 FROM python:3.14-alpine3.23
 
-ARG VERSION="0.0.1"
 ARG VCS_REF
 ARG BUILD_DATE
 
 LABEL org.opencontainers.image.title="Links as Code" \
-      org.opencontainers.image.version="${VERSION}" \
       org.opencontainers.image.authors="Dennis Roth" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.source="https://github.com/rothdennis/links-as-code" \

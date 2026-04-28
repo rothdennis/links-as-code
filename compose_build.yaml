@@ -2,9 +2,12 @@ services:
 
   lac:
     build: .
-    container_name: lac
+    container_name: lac-dev
     restart: unless-stopped
     ports:
-      - "9000:9000"
+      - "9001:9000"
     volumes:
       - ./data:/app/data
+    environment:
+      OPEN_IN_NEW_TAB: False # default is True
+      TITLE: My link collection
