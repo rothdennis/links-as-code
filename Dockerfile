@@ -1,10 +1,10 @@
 # builder stage
-FROM python:3.14-alpine3.23 as builder
+FROM python:3.15-alpine3.23 as builder
 COPY requirements.txt .
 RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
 
 # final stage
-FROM python:3.14-alpine3.23
+FROM python:3.15-alpine3.23
 
 ARG VCS_REF
 ARG BUILD_DATE
